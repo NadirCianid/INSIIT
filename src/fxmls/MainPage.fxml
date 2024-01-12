@@ -33,7 +33,7 @@
             <TableColumn fx:id="priceTC" prefWidth="103.0" text="Цена" />
         </columns>
       </TableView>
-      <Button layoutX="404.0" layoutY="349.0" mnemonicParsing="false" onAction="#seeMoreAboutProduct" text="Подробная информация">
+      <Button layoutX="404.0" layoutY="349.0" mnemonicParsing="false" onAction="#toProductPage" text="Подробная информация">
          <font>
             <Font size="14.0" />
          </font>

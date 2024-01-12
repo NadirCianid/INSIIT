@@ -51,7 +51,7 @@
       </Label>
       <Separator layoutX="38.0" layoutY="346.0" prefHeight="17.0" prefWidth="544.0" />
       <Button layoutX="235.0" layoutY="363.0" mnemonicParsing="false" onAction="#publishReview" text="Опубликовать отзыв" />
-      <CheckBox fx:id="verificationCB" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="true" layoutX="446.0" layoutY="125.0" mnemonicParsing="false" onAction="#verifyReview" text="Верифицировано" textAlignment="CENTER" />
+      <CheckBox fx:id="verificationCB" alignment="CENTER_RIGHT" contentDisplay="RIGHT" disable="true" layoutX="446.0" layoutY="125.0" mnemonicParsing="false"  text="Верифицировано" textAlignment="CENTER" />
       <TextArea fx:id="reviewTextArea" layoutX="51.0" layoutY="186.0" prefHeight="155.0" prefWidth="521.0" promptText="Введите здесь текст вашего отзыва" />
       <ChoiceBox fx:id="clientRatingCB" layoutX="515.0" layoutY="157.0" prefHeight="25.0" prefWidth="57.0" />
    </children>

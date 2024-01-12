@@ -22,9 +22,6 @@ public class StartPoint extends Application {
 
         prepareNewStage(stage, fxmlLoader);
 
-        StartPageController startPageController = fxmlLoader.getController();
-        startPageController.init();
-
         environmentInit();
     }
 
