@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaceControllers.StartPageController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="92.0" layoutY="93.0" prefHeight="229.0" prefWidth="419.0" spacing="25.0">
@@ -21,7 +20,7 @@
             </Label>
             <TextField fx:id="nameTextField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" promptText="Имя и Фамилия" />
             <TextField fx:id="phoneTextField" maxWidth="-Infinity" prefWidth="200.0" promptText="Номер телефона" />
-            <CheckBox mnemonicParsing="false" onAction="#logInAsAdmin" text="Войти, как администратор" />
+            <CheckBox fx:id="logInAsAdminCheckBox" mnemonicParsing="false" onAction="#logInAsAdmin" text="Войти, как администратор" />
             <Button mnemonicParsing="false" onAction="#logIn" text="Войти" />
          </children>
          <padding>

@@ -1,5 +1,7 @@
 package interfaceControllers;
 
+import backend.ProductsBase;
+import backend.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +15,7 @@ import java.util.Objects;
 
 
 public class StartPoint extends Application {
-
+    public static User user;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -26,7 +28,9 @@ public class StartPoint extends Application {
     }
 
     private void environmentInit() {
-
+        User.admins.add(new User("админ", "7123456789", true));
+        ProductsBase.populateCategoriesList();
+        ProductsBase.populateProductList();
     }
 
     private static void prepareNewStage(Stage stage, FXMLLoader fxmlLoader) throws IOException {
@@ -41,7 +45,7 @@ public class StartPoint extends Application {
     }
 
     public static void openSecondWindow(String messageText, String messageTitle) {
-        FXMLLoader loader = new FXMLLoader(StartPoint.class.getResource("..//fxmls//messagePage.fxml"));
+        FXMLLoader loader = new FXMLLoader(StartPoint.class.getResource("..//fxmls//MessagePage.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -54,9 +58,22 @@ public class StartPoint extends Application {
         secondStage.setScene(new Scene(root));
 
         // Получение контроллера второго окна
-        // MessagePageController controller = loader.getController();
-
+         MessagePageController controller = loader.getController();
+         controller.setMessage(messageText, messageTitle);
 
         secondStage.show();
+    }
+
+    public static void goToProductPage(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(StartPoint.class.getResource("..//fxmls//ProductPage.fxml")));
+
+        try {
+            loadNewStage(event, fxmlLoader);
+        } catch (IOException e) {
+            System.out.println("Ошибка загрузки FXMLLoader");
+        }
+
+        ProductPageController productPageController = fxmlLoader.getController();
+        productPageController.init();
     }
 }

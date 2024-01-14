@@ -1,5 +1,7 @@
 package interfaceControllers;
 
+import backend.Product;
+import backend.ProductsBase;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,7 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.util.Objects;
 
+import static backend.ProductsBase.selectedProduct;
 import static interfaceControllers.StartPoint.loadNewStage;
 
 public class ProductPageController {
@@ -52,6 +55,13 @@ public class ProductPageController {
             System.out.println("Ошибка загрузки FXMLLoader");
         }
 
+        if(selectedProduct.getReviewList().size() == 0) {
+            StartPoint.openSecondWindow("У данного продукта еще нет отзывов", "Увы");
+            return;
+        }
+
+        ReviewPageController.currentReview = selectedProduct.getReviewList().get(0);
+
         ReviewPageController reviewPageController = fxmlLoader.getController();
         reviewPageController.init(true);
     }
@@ -71,5 +81,10 @@ public class ProductPageController {
     }
 
     public void init() {
+        productNameLabel.setText(selectedProduct.getName());
+        ratingLabel.setText("Рейтинг: " + selectedProduct.getRating() + ", Отзывов: "  + selectedProduct.getReviewList().size() + ".");
+        priceLabel.setText("Цена - " + selectedProduct.getPrice() + " денег");
+        specificationsText.setText(selectedProduct.getSpecifications());
+        descriptionText.setText(selectedProduct.getDescription());
     }
 }

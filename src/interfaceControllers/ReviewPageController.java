@@ -1,5 +1,8 @@
 package interfaceControllers;
 
+import backend.Product;
+import backend.ProductsBase;
+import backend.Review;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +14,13 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.util.Objects;
 
+import static backend.ProductsBase.selectedProduct;
+import static interfaceControllers.StartPoint.goToProductPage;
 import static interfaceControllers.StartPoint.loadNewStage;
 
 public class ReviewPageController {
+
+    public static Review currentReview;
 
     @FXML
     private Label clientNameLabel;
@@ -44,16 +51,7 @@ public class ReviewPageController {
 
     @FXML
     void backToProduct(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("..//fxmls//ProductPage.fxml")));
-
-        try {
-            loadNewStage(event, fxmlLoader);
-        } catch (IOException e) {
-            System.out.println("Ошибка загрузки FXMLLoader");
-        }
-
-        ProductPageController productPageController = fxmlLoader.getController();
-        productPageController.init();
+        goToProductPage(event);
     }
 
     @FXML
@@ -81,9 +79,41 @@ public class ReviewPageController {
 
     @FXML
     void verifyReview(ActionEvent event) {
+        if(StartPoint.user.isAdmin()) {
+            currentReview.verify(verificationCB.isSelected());
+        }
 
     }
 
     public void init(Boolean forward) {
+        int newReviewIndex = 0;
+        int currentReviewIndex = currentReview.getIndex();
+
+
+
+        if(selectedProduct.getReviewList().size() > currentReviewIndex + 1 && forward) {
+            newReviewIndex = currentReviewIndex + 1;
+        } else if(currentReviewIndex > 0 && !forward) {
+            newReviewIndex = currentReviewIndex - 1;
+        }
+
+        try {
+            currentReview = selectedProduct.getReviewList().get(newReviewIndex);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Движение дальше невозможно");
+            return;
+        }
+
+        productNameLabel.setText(selectedProduct.getName());
+        ratingLabel.setText("Рейтинг: " + selectedProduct.getRating() + ", Отзывов: "  + selectedProduct.getReviewList().size() + ".");
+        priceLabel.setText("Цена - " + selectedProduct.getPrice() + " денег");
+        reviewText.setText(currentReview.getText());
+        clientNameLabel.setText(currentReview.getAuthorName());
+        ratingLabel.setText(String.valueOf(currentReview.getRating()));
+        verificationCB.setSelected(currentReview.isVerified());
+
+        if(StartPoint.user.isAdmin()) {
+            verificationCB.setDisable(false);
+        }
     }
 }

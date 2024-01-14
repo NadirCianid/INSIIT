@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c3a7ab8-3a30-40ff-941e-518c93c53c4e" name="Changes" comment="Закончил написание интерфейса (только визуальная часть)">
+    <list default="true" id="0c3a7ab8-3a30-40ff-941e-518c93c53c4e" name="Changes" comment="Реализовал переход между сценами">
+      <change afterPath="$PROJECT_DIR$/src/backend/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/ProductsBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fxmls/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/NewReviewPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/NewReviewPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/ProductPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/ProductPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/ReviewPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/ReviewPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fxmls/StartPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxmls/StartPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaceControllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaceControllers/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaceControllers/NewReviewPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaceControllers/NewReviewPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaceControllers/ProductPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaceControllers/ProductPageController.java" afterDir="false" />
@@ -19,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -36,18 +45,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.2/lib",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-20.0.2/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="backend" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="interfaceControllers.StartPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="interfaceControllers.StartPoint" />
@@ -77,7 +91,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705065756057</updated>
-      <workItem from="1705065757924" duration="11694000" />
+      <workItem from="1705065757924" duration="11924000" />
+      <workItem from="1705158050645" duration="7331000" />
+      <workItem from="1705180809790" duration="610000" />
+      <workItem from="1705225112911" duration="7645000" />
     </task>
     <task id="LOCAL-00001" summary="Закончил написание интерфейса (только визуальная часть)">
       <created>1705087699343</created>
@@ -86,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705087699343</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Реализовал переход между сценами">
+      <created>1705090673800</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705090673800</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +129,31 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Закончил написание интерфейса (только визуальная часть)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Закончил написание интерфейса (только визуальная часть)" />
+    <MESSAGE value="Реализовал переход между сценами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовал переход между сценами" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/interfaceControllers/MainPageController.java</url>
+          <line>50</line>
+          <properties class="interfaceControllers.MainPageController" method="filterByName">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/interfaceControllers/NewReviewPageController.java</url>
+          <line>48</line>
+          <properties class="interfaceControllers.NewReviewPageController" method="publishReview">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

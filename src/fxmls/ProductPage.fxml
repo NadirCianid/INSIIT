@@ -26,12 +26,12 @@
          </font>
       </Label>
       <Separator layoutX="28.0" layoutY="60.0" prefHeight="17.0" prefWidth="544.0" />
-      <Label fx:id="ratingLabel" layoutX="33.0" layoutY="104.0" text="Рейтинг: 4.5">
+      <Label fx:id="ratingLabel" layoutX="33.0" layoutY="104.0" text="Рейтинг: 4.5, 100500 Отзывов">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="priceLabel" layoutX="156.0" layoutY="104.0" text="Цена - 100500 денег">
+      <Label fx:id="priceLabel" layoutX="449.0" layoutY="104.0" text="Цена - 100500 денег">
          <font>
             <Font size="13.0" />
          </font>
